@@ -8,17 +8,13 @@ start:
 install: 
 	@echo "installing all dependencies"
 	$(CD) pip3 install -r requirements.txt
-	
-seed: 
-	@echo "seeding data"
-	$(CD) python3 manage.py import_from_csv_file
 
 migrate:
 	@echo "migrating into the db"
 	$(CD) python3 manage.py migrate
 
 migrations: 
-	@echo "creating migrations"
+	@echo "creating migrations files"
 	$(CD) python3 manage.py makemigrations
 
 pytest: 
@@ -42,10 +38,10 @@ loaddata:
 	$(CD) python3 manage.py loaddata db.json 
 
 freeze:
-	@echo "updating requirements.txt"
+	@echo "updating requirements.txt file"
 	$(CD) rm -f requirements.txt
 	$(CD) pip3 freeze >> requirements.txt
 
 action:
-	@echo "executing command"
+	@echo "executing other command"
 	$(CD) python3 manage.py $(ARGS)
