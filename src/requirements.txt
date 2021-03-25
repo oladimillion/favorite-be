@@ -31,7 +31,7 @@ pytest-django==3.5.1
 python-dateutil==2.6.0
 python-dotenv==0.10.3
 pytz==2019.1
-PyYAML==5.1.1
+PyYAML==5.4
 requests==2.22.0
 simplejson==3.16.0
 six==1.12.0
